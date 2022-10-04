@@ -1,9 +1,10 @@
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
 
 function ExpenseItem(data) {
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <ExpenseDate date={data.date} />
       <div className="expense-item__description">
         <h2>{data.title}</h2>
@@ -12,7 +13,7 @@ function ExpenseItem(data) {
           {data.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 
