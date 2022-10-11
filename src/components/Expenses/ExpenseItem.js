@@ -13,17 +13,21 @@ const ExpenseItem = (data) => {
   };
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={data.date} />
-      <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">
-          Php{" "}
-          {data.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={data.date} />
+        <div className="expense-item__description">
+          <h2>{title}</h2>
+          <div className="expense-item__price">
+            Php{" "}
+            {data.amount.toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </div>
+          <button onClick={clickButton}>Click me</button>
         </div>
-        <button onClick={clickButton}>Click me</button>
-      </div>
-    </Card>
+      </Card>
+    </li>
   );
 };
 
