@@ -1,24 +1,24 @@
 import { useState } from "react";
-import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpenses/NewExpense";
+import Expenses from "./components/Expenses/Expenses/Expenses";
 import Counter from "./components/Counter/Counter";
 
 const initialExpenses = [
   {
     id: "e1",
-    title: "Groceries",
+    title: "Iphone 45",
     amount: 3000,
     date: new Date(2022, 9, 2),
   },
   {
     id: "e2",
-    title: "Lot",
+    title: "Mac & Cheese",
     amount: 15000,
     date: new Date(2022, 9, 2),
   },
   {
     id: "e3",
-    title: "Bills",
+    title: "Trip to jerusalem",
     amount: 3000,
     date: new Date(2022, 9, 2),
   },

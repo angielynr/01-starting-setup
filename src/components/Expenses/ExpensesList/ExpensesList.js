@@ -1,6 +1,6 @@
 import React from "react";
 import "./ExpensesList.css";
-import ExpenseItem from "./ExpenseItem";
+import ExpenseItem from "../ExpenseItem/ExpenseItem";
 
 const ExpensesList = (data) => {
   if (data.items.length === 0) {

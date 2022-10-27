@@ -1,7 +1,7 @@
 import React, { useState } from "react"; //hooks
 import "./ExpenseItem.css";
-import ExpenseDate from "./ExpenseDate";
-import Card from "../UI/Card";
+import ExpenseDate from "../ExpendeDate/ExpenseDate";
+import Card from "../../UI/Card";
 
 const ExpenseItem = (data) => {
   //declared inside main function, not on nested
