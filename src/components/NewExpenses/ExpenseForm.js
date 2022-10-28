@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (data) => {
-  const [enteredTitle, setEnteredTitle] = useState(""); //it will use a string since the value of event is always string
-  const [enteredAmount, setEnteredAmount] = useState("");
+  //const [enteredTitle, setEnteredTitle] = useState(""); //it will use a string since the value of event is always string
+  //const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const enteredUserTitle = useRef();
+  const enteredUserAmount = useRef();
 
-  const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
-  };
-  const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
-  };
+  // const titleChangeHandler = (event) => {
+  //   setEnteredTitle(event.target.value);
+  // };
+  // const amountChangeHandler = (event) => {
+  //   setEnteredAmount(event.target.value);
+  // };
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
     console.log(event.target.value);
@@ -19,6 +21,8 @@ const ExpenseForm = (data) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const enteredTitle = enteredUserTitle.current.value;
+    const enteredAmount = enteredUserAmount.current.value;
 
     const expenseData = {
       title: enteredTitle,
@@ -27,8 +31,9 @@ const ExpenseForm = (data) => {
     };
 
     data.onSaveExpenseData(expenseData);
-    setEnteredTitle("");
-    setEnteredAmount("");
+    // enteredTitle.current.value = "";
+    // enteredAmount.current.value = "";
+    event.target.reset();
     setEnteredDate("");
   };
 
@@ -38,17 +43,21 @@ const ExpenseForm = (data) => {
         <div className="new-expense__control">
           <label>Title</label>
           <input
+            id="title"
             type="text"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
+            // value={enteredTitle}
+            // onChange={titleChangeHandler}
+            ref={enteredUserTitle}
           />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
+            id="amount"
             type="number"
-            value={enteredAmount}
-            onChange={amountChangeHandler}
+            // value={enteredAmount}
+            // onChange={amountChangeHandler}
+            ref={enteredUserAmount}
           />
         </div>
         <div className="new-expense__control">
