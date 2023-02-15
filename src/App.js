@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewExpense from "./components/NewExpenses/NewExpense";
 import Expenses from "./components/Expenses/Expenses/Expenses";
 import Counter from "./components/Counter/Counter";
+import ProductList from "./components/Product/ProductList";
 
 const initialExpenses = [
   {
@@ -34,6 +35,7 @@ const App = () => {
   };
   return (
     <div>
+      <ProductList />
       <h2 className="title">Expense App</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
